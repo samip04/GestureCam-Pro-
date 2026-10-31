@@ -1,0 +1,231 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+body {
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0a0f1e, #0f172a);
+    color: #f0f0f0;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 2rem;
+    background: linear-gradient(135deg, #a5f3fc, #22d3ee);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    color: #94a3b8;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+}
+
+.gesture-badge {
+    display: inline-flex;
+    gap: 20px;
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(8px);
+    padding: 8px 20px;
+    border-radius: 40px;
+    margin-bottom: 15px;
+    font-size: 0.8rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.gesture-badge span {
+    background: #1e293b;
+    padding: 4px 12px;
+    border-radius: 30px;
+    color: #7dd3fc;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    margin: 15px auto;
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: 0 25px 40px rgba(0,0,0,0.5), 0 0 0 2px rgba(34,211,238,0.2);
+    background: #000;
+}
+
+.video-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.1s ease-out;
+    transform-origin: center center;
+    pointer-events: none;
+}
+
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0 15px;
+    flex-wrap: wrap;
+}
+
+button {
+    padding: 10px 24px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 60px;
+    background: linear-gradient(105deg, #0f172a, #1e293b);
+    color: white;
+    cursor: pointer;
+    backdrop-filter: blur(4px);
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    border: 1px solid rgba(34,211,238,0.3);
+}
+
+button:hover {
+    transform: scale(1.02);
+    background: linear-gradient(105deg, #1e293b, #2d3a5e);
+    border-color: #22d3ee;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.4);
+}
+
+.info-panel {
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(12px);
+    display: inline-flex;
+    gap: 25px;
+    padding: 8px 25px;
+    border-radius: 60px;
+    margin: 10px auto;
+    font-weight: 600;
+    font-size: 1rem;
+    border: 1px solid #334155;
+}
+
+.info-panel div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.info-panel span:first-child {
+    color: #7dd3fc;
+}
+
+#zoomDisplay, #modeDisplay {
+    font-family: monospace;
+    font-size: 1.1rem;
+}
+
+.photos-section {
+    margin-top: 25px;
+    background: rgba(0,0,0,0.4);
+    border-radius: 28px;
+    padding: 15px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.photos-section h3 {
+    text-align: left;
+    margin-bottom: 12px;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#photos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    max-height: 180px;
+    overflow-y: auto;
+    padding: 8px;
+}
+
+#photos img {
+    width: 100px;
+    height: 75px;
+    object-fit: cover;
+    border-radius: 16px;
+    border: 2px solid #22d3ee;
+    transition: 0.15s;
+    cursor: pointer;
+    background: #0f172a;
+}
+
+#photos img:hover {
+    transform: scale(1.05);
+    border-color: #facc15;
+}
+
+.clear-btn {
+    background: #2d3748;
+    padding: 5px 15px;
+    font-size: 0.8rem;
+    margin-left: 12px;
+}
+
+footer {
+    font-size: 0.7rem;
+    margin-top: 20px;
+    opacity: 0.6;
+}
+
+@media (max-width: 768px) {
+    .info-panel { 
+        gap: 12px; 
+        font-size: 0.8rem; 
+        padding: 6px 15px; 
+    }
+    button { 
+        padding: 8px 16px; 
+        font-size: 0.8rem; 
+    }
+    .gesture-badge {
+        gap: 10px;
+        font-size: 0.7rem;
+    }
+    .container {
+        aspect-ratio: 4 / 3;
+    }
+}

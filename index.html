@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>GestureCam Pro ✋ | AI Hand-Controlled Camera</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>✨ GestureCam Pro ✨</h1>
+<div class="subtitle">AI hand tracking | Pinch to zoom | Move to pan | Smart gestures</div>
+
+<div class="gesture-badge">
+    <span>🤏 Pinch In (fingers together) → Zoom Out</span>
+    <span>🖐️ Pinch Out (fingers apart) → Zoom In</span>
+    <span>✌️ Two-Finger (V) → Reset Zoom/Pan</span>
+    <span>👊 Fist → Freeze movement</span>
+    <span>👉 Move hand → Pan camera</span>
+</div>
+
+<div class="container">
+    <div class="video-wrapper">
+        <video id="video" autoplay playsinline muted></video>
+    </div>
+    <canvas id="canvas"></canvas>
+</div>
+
+<div class="controls">
+    <button id="captureBtn">📸 Capture Moment</button>
+    <button id="resetBtn">🔄 Full Reset</button>
+    <button id="toggleFilterBtn">🎨 Toggle Filter: None</button>
+    <button id="clearPhotosBtn">🗑️ Clear Gallery</button>
+</div>
+
+<div class="info-panel">
+    <div><span>🔍 Zoom:</span> <span id="zoomDisplay">1.00x</span></div>
+    <div><span>🎯 Mode:</span> <span id="modeDisplay">Active</span></div>
+    <div><span>🖐️ Hand Status:</span> <span id="handStatus">Waiting...</span></div>
+</div>
+
+<div class="photos-section">
+    <h3>📸 Photo Gallery <button id="smallClearBtn" class="clear-btn">Clear All</button></h3>
+    <div id="photos"></div>
+</div>
+<footer>💡 Pro tips: Pinch IN (thumb+index together) = Zoom OUT | Pinch OUT (fingers spread) = Zoom IN | Two-finger V = Reset | Fist = Lock pan</footer>
+
+<!-- MediaPipe Libraries -->
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
